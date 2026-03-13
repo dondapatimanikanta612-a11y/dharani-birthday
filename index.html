@@ -292,7 +292,7 @@ animation:fall linear forwards;
 
 <div id="videoBox" class="videoBox">
 
-<video id="loveVideo" controls autoplay>
+<video id="loveVideo" controls playsinline>
 
 <source src="video1.mp4">
 
@@ -304,12 +304,14 @@ animation:fall linear forwards;
 <h1>Forever Yours 💖</h1>
 </div>
 
-<audio autoplay loop>
-<source src="appudo_ippudo.mp3">
+<h2>🎵 Our Song</h2>
+
+<audio controls loop style="width:100%;">
+<source src="appudo_ippudo.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="voiceGreeting">
-<source src="voice.mp3">
+<audio controls>
+<source src="voice.mp3" type="audio/mpeg">
 </audio>
 
 <script>
