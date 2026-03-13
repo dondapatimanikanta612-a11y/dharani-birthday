@@ -310,13 +310,11 @@ animation:fall linear forwards;
 <source src="appudo_ippudo.mp3" type="audio/mpeg">
 </audio>
 
-<audio controls>
-<source src="voice.mp3" type="audio/mpeg">
-</audio>
-
+<audio id="voiceGreeting" src="voice.mp3"></audio>
 <script>
     document.addEventListener("click", function () {
   var videos = document.querySelectorAll("video");
+  document.getElementById("voiceGreeting").play();
   var audios = document.querySelectorAll("audio");
 
   videos.forEach(function(v){
