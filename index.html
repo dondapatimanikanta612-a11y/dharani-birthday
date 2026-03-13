@@ -22,8 +22,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* loading */
-
 #loadingScreen{
 position:fixed;
 width:100%;
@@ -50,8 +48,6 @@ animation:spin 1s linear infinite;
 100%{transform:rotate(360deg)}
 }
 
-/* intro */
-
 #intro{
 display:none;
 position:fixed;
@@ -71,8 +67,6 @@ font-size:70px;
 color:pink;
 }
 
-/* welcome */
-
 #welcomeBox{
 display:none;
 position:fixed;
@@ -86,8 +80,6 @@ border-radius:20px;
 z-index:1000;
 }
 
-/* main page */
-
 #mainPage{
 display:none;
 background:rgba(0,0,0,0.45);
@@ -95,16 +87,12 @@ padding:20px;
 min-height:100vh;
 }
 
-/* title */
-
 h1{
 font-family:'Dancing Script',cursive;
 font-size:60px;
 color:#ff4da6;
 text-shadow:0 0 10px pink,0 0 20px red;
 }
-
-/* cake */
 
 .cake{
 font-size:90px;
@@ -117,15 +105,11 @@ animation:cake 2s infinite;
 100%{transform:scale(1)}
 }
 
-/* slideshow */
-
 .slideshow img{
 width:min(90vw,400px);
 border-radius:20px;
 box-shadow:0 0 20px pink;
 }
-
-/* gallery */
 
 .gallery{
 display:grid;
@@ -140,8 +124,6 @@ border-radius:15px;
 box-shadow:0 0 10px pink;
 }
 
-/* buttons */
-
 button{
 padding:12px 25px;
 font-size:18px;
@@ -152,8 +134,6 @@ color:white;
 cursor:pointer;
 margin-top:15px;
 }
-
-/* love letter */
 
 .letter{
 display:none;
@@ -169,8 +149,6 @@ width:90%;
 max-width:500px;
 z-index:200;
 }
-
-/* video */
 
 .videoBox{
 display:none;
@@ -188,25 +166,6 @@ z-index:300;
 width:min(90vw,500px);
 border-radius:15px;
 }
-
-/* ending */
-
-#finalMessage{
-display:none;
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:400;
-}
-
-#finalMessage h1{
-font-size:70px;
-color:pink;
-text-shadow:0 0 20px pink;
-}
-
-/* hearts */
 
 .heart{
 position:absolute;
@@ -255,7 +214,6 @@ animation:fall linear forwards;
 <h2>Beautiful Memories 📸</h2>
 
 <div class="gallery">
-
 <img src="dharani.jpg">
 <img src="photo1.jpg">
 <img src="photo2.jpg">
@@ -267,10 +225,9 @@ animation:fall linear forwards;
 <img src="photo8.jpg">
 <img src="photo9.jpg">
 <img src="photo10.jpg">
-
 </div>
 
-<button onclick="openLetter()">💌 ప్రేమ లేఖ</button>
+<button onclick="openLetter()">💌 ప్రేమలేఖ</button>
 
 <button onclick="showVideo()">💖 Final Surprise</button>
 
@@ -278,12 +235,34 @@ animation:fall linear forwards;
 
 <div id="letterBox" class="letter">
 
-<h2>ధరణికి నా ప్రేమ లేఖ ❤️</h2>
+<h2>💌 ధరణికి నా ప్రేమ లేఖ</h2>
 
 <p>
-నా ప్రియమైన ధరణి 💖  
-నీ నవ్వు నా ఆనందం.  
-నీ పుట్టినరోజు రోజు ఎప్పుడూ సంతోషంగా ఉండాలని కోరుకుంటున్నాను.
+
+నా ప్రియమైన ధరణి ❤️  
+ముందుగా… హ్యాపీ బర్త్‌డే ధరణి 🎂💖  
+
+ఈ ప్రపంచానికి ఒక అందమైన మనసు,  
+ఒక మధురమైన నవ్వు,  
+ఒక అమూల్యమైన వ్యక్తి వచ్చింది — అదే నువ్వు ధరణి.  
+
+నువ్వు నా జీవితంలోకి వచ్చిన తర్వాత  
+నా ప్రపంచం పూర్తిగా మారిపోయింది.  
+
+నువ్వు నవ్వితే నా మనసు కూడా నవ్వుతుంది.  
+నువ్వు బాధపడితే నా హృదయం కూడా బాధపడుతుంది.  
+
+నువ్వు నా జీవితంలో ఒక భాగం మాత్రమే కాదు…  
+నువ్వే నా జీవితానికి అర్థం.  
+
+నేను నీకు ఒక మాట ఇస్తున్నాను —  
+జీవితంలో ఎన్ని కష్టాలు వచ్చినా  
+నేను ఎప్పుడూ నీ పక్కనే ఉంటాను.  
+
+ఎప్పటికీ నిన్ను ప్రేమించే  
+నీ  
+మనికంట దొండపాటి ❤️
+
 </p>
 
 <button onclick="closeLetter()">Close</button>
@@ -293,15 +272,13 @@ animation:fall linear forwards;
 <div id="videoBox" class="videoBox">
 
 <video id="loveVideo" controls playsinline>
-
 <source src="video1.mp4">
-
 </video>
 
-</div>
+<br><br>
 
-<div id="finalMessage">
-<h1>Forever Yours 💖</h1>
+<button onclick="closeVideo()">Close</button>
+
 </div>
 
 <h2>🎵 Our Song</h2>
@@ -310,32 +287,16 @@ animation:fall linear forwards;
 <source src="appudo_ippudo.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="voiceGreeting" src="voice.mp3"></audio>
+<audio id="voiceGreeting">
+<source src="voice.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-    document.addEventListener("click", function () {
-  var videos = document.querySelectorAll("video");
-  document.getElementById("voiceGreeting").play();
-  var audios = document.querySelectorAll("audio");
-
-  videos.forEach(function(v){
-    v.muted = false;
-    v.volume = 1;
-  });
-
-  audios.forEach(function(a){
-    a.muted = false;
-    a.volume = 1;
-  });
-});
-
-/* loading */
 
 setTimeout(function(){
 document.getElementById("loadingScreen").style.display="none";
 document.getElementById("intro").style.display="flex";
 },3000);
-
-/* intro */
 
 setTimeout(function(){
 document.getElementById("intro").style.display="none";
@@ -351,17 +312,27 @@ document.getElementById("voiceGreeting").play();
 
 }
 
-/* slideshow */
+function openLetter(){
+document.getElementById("letterBox").style.display="block";
+}
+
+function closeLetter(){
+document.getElementById("letterBox").style.display="none";
+}
+
+function closeVideo(){
+
+var player=document.getElementById("loveVideo");
+
+player.pause();
+player.currentTime=0;
+
+document.getElementById("videoBox").style.display="none";
+
+}
 
 var images=[
-"photo1.jpg",
-"photo2.jpg",
-"photo3.jpg",
-"photo4.jpg",
-"photo5.jpg",
-"photo6.jpg",
-"photo7.jpg",
-"photo8.jpg"
+"photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg","photo5.jpg","photo6.jpg","photo7.jpg","photo8.jpg"
 ];
 
 var i=0;
@@ -375,8 +346,6 @@ if(i>=images.length) i=0;
 document.getElementById("slide").src=images[i];
 
 },3000);
-
-/* countdown */
 
 var birthday=new Date("May 27 2026").getTime();
 
@@ -395,8 +364,6 @@ document.getElementById("countdown").innerHTML=
 d+" Days "+h+" Hours "+m+" Minutes "+s+" Seconds";
 
 },1000);
-
-/* floating hearts */
 
 function heart(){
 
@@ -420,26 +387,7 @@ setTimeout(()=>h.remove(),8000);
 
 setInterval(heart,300);
 
-/* love letter */
-
-function openLetter(){
-document.getElementById("letterBox").style.display="block";
-}
-
-function closeLetter(){
-document.getElementById("letterBox").style.display="none";
-}
-
-/* video playlist */
-
-var videos=[
-"video1.mp4",
-"video2.mp4",
-"video3.mp4",
-"video4.mp4",
-"video5.mp4",
-"video6.mp4"
-];
+var videos=["video1.mp4","video2.mp4","video3.mp4","video4.mp4","video5.mp4","video6.mp4"];
 
 var v=0;
 
@@ -461,14 +409,6 @@ if(v<videos.length){
 
 player.src=videos[v];
 player.play();
-
-}
-
-else{
-
-document.getElementById("videoBox").style.display="none";
-
-document.getElementById("finalMessage").style.display="block";
 
 }
 
