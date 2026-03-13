@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Dharani</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:url("dharani.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* loading */
+
+#loadingScreen{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.loader{
+border:6px solid #eee;
+border-top:6px solid pink;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+/* intro */
+
+#intro{
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:900;
+}
+
+#intro h1{
+font-family:'Dancing Script',cursive;
+font-size:70px;
+color:pink;
+}
+
+/* welcome */
+
+#welcomeBox{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:black;
+padding:30px;
+border-radius:20px;
+z-index:1000;
+}
+
+/* main page */
+
+#mainPage{
+display:none;
+background:rgba(0,0,0,0.45);
+padding:20px;
+min-height:100vh;
+}
+
+/* title */
+
+h1{
+font-family:'Dancing Script',cursive;
+font-size:60px;
+color:#ff4da6;
+text-shadow:0 0 10px pink,0 0 20px red;
+}
+
+/* cake */
+
+.cake{
+font-size:90px;
+animation:cake 2s infinite;
+}
+
+@keyframes cake{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+/* slideshow */
+
+.slideshow img{
+width:min(90vw,400px);
+border-radius:20px;
+box-shadow:0 0 20px pink;
+}
+
+/* gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:10px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+box-shadow:0 0 10px pink;
+}
+
+/* buttons */
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,pink,red);
+color:white;
+cursor:pointer;
+margin-top:15px;
+}
+
+/* love letter */
+
+.letter{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:black;
+padding:20px;
+border-radius:20px;
+width:90%;
+max-width:500px;
+z-index:200;
+}
+
+/* video */
+
+.videoBox{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:black;
+padding:20px;
+border-radius:20px;
+z-index:300;
+}
+
+.videoBox video{
+width:min(90vw,500px);
+border-radius:15px;
+}
+
+/* ending */
+
+#finalMessage{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:400;
+}
+
+#finalMessage h1{
+font-size:70px;
+color:pink;
+text-shadow:0 0 20px pink;
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+top:-10px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loadingScreen">
+<h2>Loading Surprise for Dharani 💖</h2>
+<div class="loader"></div>
+</div>
+
+<div id="intro">
+<h1>DHARANI 💖</h1>
+<p>For Someone Special</p>
+</div>
+
+<div id="welcomeBox">
+<h2>Welcome Dharani 💖</h2>
+<button onclick="enterSite()">Enter</button>
+</div>
+
+<div id="mainPage">
+
+<h1>Happy Birthday Dharani</h1>
+
+<div class="cake">🎂</div>
+
+<div id="countdown"></div>
+
+<div class="slideshow">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<h2>Beautiful Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="dharani.jpg">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+
+</div>
+
+<button onclick="openLetter()">💌 ప్రేమ లేఖ</button>
+
+<button onclick="showVideo()">💖 Final Surprise</button>
+
+</div>
+
+<div id="letterBox" class="letter">
+
+<h2>ధరణికి నా ప్రేమ లేఖ ❤️</h2>
+
+<p>
+నా ప్రియమైన ధరణి 💖  
+నీ నవ్వు నా ఆనందం.  
+నీ పుట్టినరోజు రోజు ఎప్పుడూ సంతోషంగా ఉండాలని కోరుకుంటున్నాను.
+</p>
+
+<button onclick="closeLetter()">Close</button>
+
+</div>
+
+<div id="videoBox" class="videoBox">
+
+<video id="loveVideo" controls autoplay>
+
+<source src="video1.mp4">
+
+</video>
+
+</div>
+
+<div id="finalMessage">
+<h1>Forever Yours 💖</h1>
+</div>
+
+<audio autoplay loop>
+<source src="appudo_ippudo.mp3">
+</audio>
+
+<audio id="voiceGreeting">
+<source src="voice.mp3">
+</audio>
+
+<script>
+
+/* loading */
+
+setTimeout(function(){
+document.getElementById("loadingScreen").style.display="none";
+document.getElementById("intro").style.display="flex";
+},3000);
+
+/* intro */
+
+setTimeout(function(){
+document.getElementById("intro").style.display="none";
+document.getElementById("welcomeBox").style.display="block";
+},6000);
+
+function enterSite(){
+
+document.getElementById("welcomeBox").style.display="none";
+document.getElementById("mainPage").style.display="block";
+
+document.getElementById("voiceGreeting").play();
+
+}
+
+/* slideshow */
+
+var images=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg",
+"photo6.jpg",
+"photo7.jpg",
+"photo8.jpg"
+];
+
+var i=0;
+
+setInterval(function(){
+
+i++;
+
+if(i>=images.length) i=0;
+
+document.getElementById("slide").src=images[i];
+
+},3000);
+
+/* countdown */
+
+var birthday=new Date("May 27 2026").getTime();
+
+setInterval(function(){
+
+var now=new Date().getTime();
+
+var diff=birthday-now;
+
+var d=Math.floor(diff/(1000*60*60*24));
+var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+var m=Math.floor((diff%(1000*60*60))/(1000*60));
+var s=Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML=
+d+" Days "+h+" Hours "+m+" Minutes "+s+" Seconds";
+
+},1000);
+
+/* floating hearts */
+
+function heart(){
+
+var h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💖";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*40)+"px";
+
+h.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),8000);
+
+}
+
+setInterval(heart,300);
+
+/* love letter */
+
+function openLetter(){
+document.getElementById("letterBox").style.display="block";
+}
+
+function closeLetter(){
+document.getElementById("letterBox").style.display="none";
+}
+
+/* video playlist */
+
+var videos=[
+"video1.mp4",
+"video2.mp4",
+"video3.mp4",
+"video4.mp4",
+"video5.mp4",
+"video6.mp4"
+];
+
+var v=0;
+
+function showVideo(){
+
+document.getElementById("videoBox").style.display="block";
+
+document.getElementById("loveVideo").play();
+
+}
+
+var player=document.getElementById("loveVideo");
+
+player.onended=function(){
+
+v++;
+
+if(v<videos.length){
+
+player.src=videos[v];
+player.play();
+
+}
+
+else{
+
+document.getElementById("videoBox").style.display="none";
+
+document.getElementById("finalMessage").style.display="block";
+
+}
+
+};
+
+</script>
+
+</body>
+
+</html>
