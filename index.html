@@ -315,6 +315,20 @@ animation:fall linear forwards;
 </audio>
 
 <script>
+    document.addEventListener("click", function () {
+  var videos = document.querySelectorAll("video");
+  var audios = document.querySelectorAll("audio");
+
+  videos.forEach(function(v){
+    v.muted = false;
+    v.volume = 1;
+  });
+
+  audios.forEach(function(a){
+    a.muted = false;
+    a.volume = 1;
+  });
+});
 
 /* loading */
 
